@@ -719,19 +719,53 @@
         updateCountdown();
         setInterval(updateCountdown, 1000);
 
-        // Handle file download with better support for Vietnamese character paths
+        // Handle file download for local PDF files
         document.addEventListener('click', function(e) {
             if (e.target.classList.contains('exam-download') || e.target.closest('.exam-download')) {
                 e.preventDefault();
                 const link = e.target.closest('.exam-download');
                 const filePath = link.getAttribute('href');
-                
+
                 if (!filePath) return;
-                
-                // Navigate to the file directly - browser will handle download
-                window.location.href = filePath;
+
+                // Encode the file path to handle Vietnamese characters
+                const encodedPath = encodeURI(filePath);
+
+                // Fetch the file and trigger download
+                fetch(encodedPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.blob();
+                    })
+                    .then(blob => {
+                        // Create a temporary URL for the blob
+                        const url = window.URL.createObjectURL(blob);
+
+                        // Create a temporary anchor element and trigger download
+                        const a = document.createElement('a');
+                        a.style.display = 'none';
+                        a.href = url;
+
+                        // Extract and decode filename from path
+                        const filename = decodeURIComponent(filePath.split('/').pop());
+                        a.download = filename;
+
+                        // Add to DOM, click, and remove
+                        document.body.appendChild(a);
+                        a.click();
+                        window.URL.revokeObjectURL(url);
+                        document.body.removeChild(a);
+                    })
+                    .catch(error => {
+                        console.error('Download failed:', error);
+                        // Fallback: open in new tab
+                        window.open(filePath, '_blank');
+                    });
             }
         });
+
     </script>
 
 </body>
