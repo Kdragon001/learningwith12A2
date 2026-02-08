@@ -117,6 +117,22 @@ body {
     color: var(--white);
 }
 
+/* Mobile nav toggle button (hidden on desktop) */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.main-nav.open ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 /* Countdown Bar */
 .countdown-bar {
     background: transparent;
@@ -618,6 +634,14 @@ body {
     line-height: 1.4;
 }
 
+/* prevent long titles and keep download button from shrinking */
+.exam-info h4, .exam-download {
+    word-break: break-word;
+}
+.exam-download {
+    flex-shrink: 0;
+}
+
 .exam-download {
     display: inline-block;
     background-color: var(--primary-color);
@@ -760,7 +784,7 @@ body {
     font-weight: 600;
     font-size: 13px;
     white-space: nowrap;
-    color: var(--dark-color);
+    color: var(--white);
 }
 
 .countdown-timer-bar {
@@ -781,7 +805,7 @@ body {
     font-size: 20px;
     display: block;
     font-variant-numeric: tabular-nums;
-    color: var(--primary-color);
+    color: var(--white);
     font-weight: 700;
 }
 
@@ -789,7 +813,7 @@ body {
     font-size: 10px;
     opacity: 0.8;
     font-weight: 600;
-    color: var(--dark-color);
+    color: var(--white);
 }
 
 .countdown-separator {
@@ -957,9 +981,30 @@ body {
         width: 100%;
     }
 
+    /* Mobile menu: hide nav items by default and show toggle */
+    .nav-toggle {
+        display: inline-block;
+        position: absolute;
+        right: 20px;
+        top: 18px;
+        background: transparent;
+        border: none;
+        font-size: 24px;
+        color: var(--primary-color);
+        cursor: pointer;
+    }
+
     .main-nav ul {
-        flex-direction: row;
+        display: none;
         gap: 20px;
+    }
+
+    .main-nav.open ul {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 12px;
+        align-items: center;
     }
 
     .banner-content h2 {
@@ -968,6 +1013,11 @@ body {
 
     .banner-content p {
         font-size: 16px;
+    }
+
+    /* reduce banner padding on small screens */
+    .banner {
+        padding: 50px 20px;
     }
 
     .courses h2,
@@ -1040,6 +1090,10 @@ body {
 
     .banner-content p {
         font-size: 14px;
+    }
+
+    .banner {
+        padding: 30px 12px;
     }
 
     .courses h2,
