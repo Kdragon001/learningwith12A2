@@ -156,25 +156,7 @@ body {
     gap: 12px;
 }
 
-/* Countdown Bar */
-.countdown-bar {
-    background: transparent;
-    color: var(--dark-color);
-    padding: 0;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    flex-shrink: 0;
-    white-space: nowrap;
-}
 
-.countdown-content {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 12px;
-    flex-wrap: nowrap;
-}
 
 /* Banner Section */
 .banner {
@@ -938,52 +920,20 @@ body {
     color: var(--secondary-color);
 }
 
-/* Stats Section */
-.stats {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: var(--white);
-    padding: 60px 20px;
-}
 
-.stats .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    text-align: center;
-}
 
-.stat-item {
-    padding: 20px;
-}
-
-.stat-number {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.stat-label {
-    font-size: 16px;
-    opacity: 0.95;
-}
-
-/* Countdown Bar */
+/* Countdown Bar Container - FIXED */
 .countdown-bar {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: var(--white);
-    padding: 12px 20px;
-    position: relative;
-    z-index: 99;
-    box-shadow: var(--shadow);
-    margin-left: auto;
-}
-
-.countdown-content {
+    background: linear-gradient(135deg, #5733d0 0%, #ffac48 100%);
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-top: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .countdown-label-bar {
@@ -1026,6 +976,35 @@ body {
     opacity: 0.6;
     font-size: 14px;
     color: var(--dark-color);
+}
+
+/* Stats Section */
+.stats {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    padding: 60px 20px;
+}
+
+.stats .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 20px;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 16px;
+    opacity: 0.95;
 }
 
 /* Contact Section */
