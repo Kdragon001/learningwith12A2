@@ -718,6 +718,20 @@
         // Cập nhật countdown mỗi giây
         updateCountdown();
         setInterval(updateCountdown, 1000);
+
+        // Handle file download with better support for Vietnamese character paths
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('exam-download') || e.target.closest('.exam-download')) {
+                e.preventDefault();
+                const link = e.target.closest('.exam-download');
+                const filePath = link.getAttribute('href');
+                
+                if (!filePath) return;
+                
+                // Navigate to the file directly - browser will handle download
+                window.location.href = filePath;
+            }
+        });
     </script>
 
 </body>
