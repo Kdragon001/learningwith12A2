@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning with 12A2 - Học Tập Cùng Lớp 12A2</title>
+    <meta name="description" content="Learning with 12A2 - Nền tảng học tập tập trung cho học sinh lớp 12A2 với các tài liệu, bài giảng và bài tập miễn phí">
+    <link rel="stylesheet" href="learning12a2.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <p class="header-info">Chào mừng đến với Learning with 12A2</p>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <img src="https://scontent.fdad1-1.fna.fbcdn.net/v/t39.30808-6/476076605_1102698415204714_7677589160236090592_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=MBkJNGbnb_kQ7kNvwHO-6zd&_nc_oc=AdkZpIKIimiwRJt-X3Iwc4G2fL4ZVqFxiehS1qH7YPPPsmSiVUsu0G6J58rO6t9RL1TW7D8UOezzDod9zzb1OS-r&_nc_zt=23&_nc_ht=scontent.fdad1-1.fna&_nc_gid=gYTK57OBV6NyKotmNeLdbg&oh=00_Aftpgzv59zqt5pOTDfSLqvruQCQ8KRJPHaoWlEi2xOhAaQ&oe=698D178F" alt=" THPT THỪA LƯU " >
+                    <h1>Learning with 12A2</h1>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#home">Trang Chủ</a></li>
+                        <li><a href="#courses">Khóa Học</a></li>
+                        <li><a href="#resources">Tài Nguyên</a></li>
+                        <li><a href="#news">Tin Tức</a></li>
+                        <li><a href="#contact">Liên Hệ</a></li>
+                    </ul>
+                </nav>
+                <button class="nav-toggle" aria-label="Mở menu" aria-expanded="false">☰</button>
+                <!-- Countdown Bar -->
+                <div class="countdown-bar">
+                    <div class="countdown-label-bar">Đếm Ngược Kỳ thi tốt nghiệp :</div>
+                    <div class="countdown-timer-bar">
+                        <span class="countdown-item-bar">
+                            <span class="countdown-number-bar" id="days-bar">0</span>
+                            <span class="countdown-label-bar-small">ngày</span>
+                        </span>
+                        <span class="countdown-separator">:</span>
+                        <span class="countdown-item-bar">
+                            <span class="countdown-number-bar" id="hours-bar">0</span>
+                            <span class="countdown-label-bar-small">giờ</span>
+                        </span>
+                        <span class="countdown-separator">:</span>
+                        <span class="countdown-item-bar">
+                            <span class="countdown-number-bar" id="minutes-bar">0</span>
+                            <span class="countdown-label-bar-small">phút</span>
+                        </span>
+                        <span class="countdown-separator">:</span>
+                        <span class="countdown-item-bar">
+                            <span class="countdown-number-bar" id="seconds-bar">0</span>
+                            <span class="countdown-label-bar-small">giây</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Banner Section -->
+        <section id="home" class="banner">
+            <div class="banner-content">
+                <h2>Chào Mừng Bạn Đến Với Learning with 12A2</h2>
+                <p>Nơi học tập, chia sẻ kiến thức và phát triển kỹ năng của lớp 12A2</p>
+                <a href="#courses" class="btn btn-primary">Khám Phá Ngay</a>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="courses">
+            <div class="container">
+                <h2>Các Khóa Học Nổi Bật</h2>
+                <div class="courses-grid" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="course-card">
+                        <div class="course-header" style="background-color: #ff6b6b;">
+                            <h3>Toán Học</h3>
+                        </div>
+                        <div class="course-body">
+                            <p>Tìm hiểu về đại số, hình học, và giải tích. Các bài giảng chi tiết và bài tập thực hành.</p>
+                            <ul>
+                                <li>Đại Số</li>
+                                <li>Hình Học</li>
+                                <li>Giải Tích</li>
+                            </ul>
+                            <a href="#math-exams" class="btn btn-small">Xem Thêm</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header" style="background-color: #4ecdc4;">
+                            <h3>Vật Lý</h3>
+                        </div>
+                        <div class="course-body">
+                            <p>Khám phá cơ học, điện học, quang học và các hiện tượng vật lý thú vị.</p>
+                            <ul>
+                                <li>Cơ Học</li>
+                                <li>Điện Học</li>
+                                <li>Quang Học</li>
+                            </ul>
+                            <a href="#physics-exams" class="btn btn-small">Xem Thêm</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header" style="background-color: #95e1d3;">
+                            <h3>Hóa Học</h3>
+                        </div>
+                        <div class="course-body">
+                            <p>Tìm hiểu về cấu trúc nguyên tử, hóa học hữu cơ và vô cơ.</p>
+                            <ul>
+                                <li>Hóa Hữu Cơ</li>
+                                <li>Hóa Vô Cơ</li>
+                                <li>Hóa Phân Tích</li>
+                            </ul>
+                            <a href="#chemistry-exams" class="btn btn-small">Xem Thêm</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header" style="background-color: #f38181;">
+                            <h3>Tiếng Anh</h3>
+                        </div>
+                        <div class="course-body">
+                            <p>Nâng cao kỹ năng nghe, nói, đọc, viết và chuẩn bị cho các kỳ thi quốc tế.</p>
+                            <ul>
+                                <li>Ngữ Pháp</li>
+                                <li>Từ Vựng</li>
+                                <li>Kỹ Năng Giao Tiếp</li>
+                            </ul>
+                            <a href="#english-exams" class="btn btn-small">Xem Thêm</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="resources">
+            <div class="container">
+                <h2>Tài Nguyên Học Tập</h2>
+                <div class="resources-grid">
+                    <div class="resource-item">
+                        <div class="resource-icon">📚</div>
+                        <h3>Tài Liệu PDF</h3>
+                        <p>Hơn 500+ tài liệu PDF miễn phí cho tất cả các môn học</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-icon">🎥</div>
+                        <h3>Video Bài Giảng</h3>
+                        <p>Các bài giảng video chất lượng cao từ các giáo viên giỏi</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-icon">✏️</div>
+                        <h3>Bài Tập Thực Hành</h3>
+                        <p>Hàng ngàn bài tập với đáp án chi tiết để kiểm tra kiến thức</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-icon">🏆</div>
+                        <h3>Đề Thi Thử</h3>
+                        <p>Các đề thi thử giúp chuẩn bị tốt nhất cho kỳ thi chính thức</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- English Exam Questions Section -->
+        <section id="english-exams" class="english-exams">
+            <div class="container">
+                <h2>Đề Bài Tiếng Anh - Đề Thi Thử THPT</h2>
+                <p class="section-description">Bộ sưu tập 30 đề thi thử tiếng Anh từ các trường THPT hàng đầu trên cả nước. Tải về và luyện tập để chuẩn bị tốt nhất cho kỳ thi.</p>
+                <div class="exams-list">
+                    <div class="exam-item">
+                        <div class="exam-number">1</div>
+                        <div class="exam-info">
+                            <h4>THPT ĐÀO DUY TỪ - THANH HOÁ 2025-2026</h4>
+                            <a href="tests/de_01.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">2</div>
+                        <div class="exam-info">
+                            <h4>KSCL THPT TRẦN PHÚ - HÀ TĨNH 2025-2026</h4>
+                            <a href="tests/de_12.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">3</div>
+                        <div class="exam-info">
+                            <h4>KSCL LIÊN TRƯỜNG THPT BẮC NINH 2025-2026</h4>
+                            <a href="tests/de_23.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">4</div>
+                        <div class="exam-info">
+                            <h4>KSCL CỤM TRƯỜNG THPT TT1 -QV1-LVT - BẮC NINH 2025-2026</h4>
+                            <a href="tests/de_25.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">5</div>
+                        <div class="exam-info">
+                            <h4>KSCL CỤM TRƯỜNG THPT HIỆP HOÀ SỐ 1 - NGÔ SĨ LIÊN - TIÊN DU SỐ 1 - BẮC NINH 2025-2026</h4>
+                            <a href="tests/de_26.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">6</div>
+                        <div class="exam-info">
+                            <h4>THPT HÀN THUYÊN - BẮC NINH (LẦN 1) 2025-2026</h4>
+                            <a href="tests/de_27.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">7</div>
+                        <div class="exam-info">
+                            <h4>KSCL THPT TRẦN PHÚ - HÀ TĨNH 2025-2026</h4>
+                            <a href="tests/de_28.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">8</div>
+                        <div class="exam-info">
+                            <h4>THPT TRẦN NGUYÊN HÃN - HẢI PHÒNG 2025-2026 (LẦN 1)</h4>
+                            <a href="tests/de_29.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">9</div>
+                        <div class="exam-info">
+                            <h4>THPT THUẬN THÀNH 1 - BẮC NINH 2025-2026</h4>
+                            <a href="tests/de_30.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">10</div>
+                        <div class="exam-info">
+                            <h4>THPT YÊN DŨNG SỐ 3 - BẮC NINH 2025-2026</h4>
+                            <a href="tests/de_02.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">11</div>
+                        <div class="exam-info">
+                            <h4>THPT QUANG TRUNG - ĐỐNG ĐA - HÀ NỘI 2025-2026</h4>
+                            <a href="tests/de_03.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">12</div>
+                        <div class="exam-info">
+                            <h4>THPT LẠNG GIANG SỐ 1 - BẮC NINH 2025-2026 (LẦN 1)</h4>
+                            <a href="tests/de_04.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">13</div>
+                        <div class="exam-info">
+                            <h4>THPT CẨM XUYÊN - HÀ TĨNH 2025-2026</h4>
+                            <a href="tests/de_05.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">14</div>
+                        <div class="exam-info">
+                            <h4>THPT YÊN DŨNG SỐ 1 - BẮC NINH 2025-2026 (LẦN 1)</h4>
+                            <a href="tests/de_06.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">15</div>
+                        <div class="exam-info">
+                            <h4>THPT TÂN YÊN 2 - BẮC NINH 2025-2026 (LẦN 1)</h4>
+                            <a href="tests/de_07.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">16</div>
+                        <div class="exam-info">
+                            <h4>THPT YÊN DŨNG SỐ 1 - BẮC NINH 2025-2026 (LẦN 1)</h4>
+                            <a href="tests/de_08.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">17</div>
+                        <div class="exam-info">
+                            <h4>THPT CHUYÊN BẮC GIANG - BẮC NINH 2025-2026 (LẦN 1)</h4>
+                            <a href="tests/de_09.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">18</div>
+                        <div class="exam-info">
+                            <h4>THPT CHUYÊN THOẠI NGỌC HẦU - AN GIANG 2025-2026 (LẦN 1)</h4>
+                            <a href="tests/de_10.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">19</div>
+                        <div class="exam-info">
+                            <h4>THPT QUỲNH THỌ - HƯNG YÊN 2025-2026 (LẦN 1)</h4>
+                            <a href="tests/de_11.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">20</div>
+                        <div class="exam-info">
+                            <h4>THPT CHUYÊN KHOA HỌC TỰ NHIÊN 2025-2026 (LẦN 2)</h4>
+                            <a href="tests/de_13.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">21</div>
+                        <div class="exam-info">
+                            <h4>THPT LIÊN TRƯỜNG NGHỆ AN 2025-2026 (MÃ LẺ)</h4>
+                            <a href="tests/de_14.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">22</div>
+                        <div class="exam-info">
+                            <h4>THPT YÊN DŨNG SỐ 2 - BẮC NINH 2025-2026 (LẦN 1)</h4>
+                            <a href="tests/de_15.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">23</div>
+                        <div class="exam-info">
+                            <h4>LIÊN TRƯỜNG NGHỆ AN 2025-2026 (ĐỢT 1)</h4>
+                            <a href="tests/de_16.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">24</div>
+                        <div class="exam-info">
+                            <h4>THPT CHUYÊN BẮC NINH 2025-2026 (LẦN 1)</h4>
+                            <a href="tests/de_17.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">25</div>
+                        <div class="exam-info">
+                            <h4>THPT BÙI THỊ XUÂN - ĐỒNG NAI 2025-2026 (LẦN 1)</h4>
+                            <a href="tests/de_18.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">26</div>
+                        <div class="exam-info">
+                            <h4>THPT LÊ VIẾT THUẬT - NGHỆ AN 2025-2026 (LẦN 2)</h4>
+                            <a href="tests/de_19.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">27</div>
+                        <div class="exam-info">
+                            <h4>SỞ NINH BÌNH L1 2025-2026</h4>
+                            <a href="tests/de_20.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">28</div>
+                        <div class="exam-info">
+                            <h4>THPT KỲ ANH - HÀ TĨNH 2025-2026</h4>
+                            <a href="tests/de_21.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">29</div>
+                        <div class="exam-info">
+                            <h4>THPT YÊN DŨNG SỐ 1 - BẮC NINH 2025-2026 (LẦN 2)</h4>
+                            <a href="tests/de_22.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">30</div>
+                        <div class="exam-info">
+                            <h4>THPT BÙI THỊ XUÂN - ĐỒNG NAI 2025-2026 (LẦN 1)</h4>
+                            <a href="tests/de_24.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Math Exam Questions Section -->
+        <section id="math-exams" class="subject-exams">
+            <div class="container">
+                <h2>Đề Bài Toán - Đề Thi Thử THPT</h2>
+                <p class="section-description">Bộ sưu tập 19 đề thi thử Toán từ các trường THPT hàng đầu trên cả nước. Tải về và luyện tập để chuẩn bị tốt nhất cho kỳ thi.</p>
+                <div class="exams-list">
+                    <div class="exam-item">
+                        <div class="exam-number">1</div>
+                        <div class="exam-info">
+                            <h4>Đề Chuyên Bắc Ninh (Lần 1) - Toán</h4>
+                            <a href="đề/toán/Đề Bài/1. Đề thi thử Chuyên Bắc Ninh LẦN 1  [ Thi thử TN THPT 2026 môn Toán ] Đề.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">2</div>
+                        <div class="exam-info">
+                            <h4>THPT Đào Duy Từ - Thanh Hoá - Toán</h4>
+                            <a href="đề/toán/2. THPT ĐÀO DUY TỪ - THANH HÓA [ Thi thử TN THPT 2026 môn Toán ] Đề.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">3</div>
+                        <div class="exam-info">
+                            <h4>Cụm Trường QV1-TT1-LVT Bắc Ninh (Lần 1) - Toán</h4>
+                            <a href="đề/toán/Đề Bài/3. CỤM TRƯỜNG QV1-TT1-LVT- BẮC NINH - LẦN 1 - [ Thi thử TN THPT 2026 môn Toán ] Đề.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">4</div>
+                        <div class="exam-info">
+                            <h4>KSCL THPT Liên cấp Đại học Hồng Đức - Toán</h4>
+                            <a href="đề/toán/Đề Bài/4. KSCL  THPT -LIÊN CẤP ĐẠI HỌC HỒNG ĐỨC [ Thi thử TN THPT 2026 môn Toán ] Đề.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">5</div>
+                        <div class="exam-info">
+                            <h4>KSCL THCS THPT Nguyễn Khuyến HCM - Toán</h4>
+                            <a href="đề/toán/Đề Bài/5. KSCL THCS THPT NGUYỄN KHUYẾN - HCM  [ Thi thử TN THPT 2026 môn Toán ] Đề.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chemistry Exam Questions Section -->
+        <section id="chemistry-exams" class="subject-exams">
+            <div class="container">
+                <h2>Đề Bài Hóa Học - Đề Thi Thử THPT</h2>
+                <p class="section-description">Bộ sưu tập 19 đề thi thử Hóa Học từ các trường THPT hàng đầu trên cả nước. Tải về và luyện tập để chuẩn bị tốt nhất cho kỳ thi.</p>
+                <div class="exams-list">
+                    <div class="exam-item">
+                        <div class="exam-number">1</div>
+                        <div class="exam-info">
+                            <h4>THPT Lương Tài - Bắc Ninh (L1) - Hóa Học</h4>
+                            <a href="đề/hoá/Đề bài/1. THPT Lương Tài - Bắc Ninh - L1 [Thi thử Tốt Nghiệp THPT 2026 - Môn Hóa Học Đề.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">2</div>
+                        <div class="exam-info">
+                            <h4>THPT Chuyên Bắc Ninh (L1) - Hóa Học</h4>
+                            <a href="đề/hoá/Đề bài/2. THPT CHUYÊN BẮC NINH - L1 [Thi thử Tốt Nghiệp THPT 2025 - Môn Hóa Học Đề.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">3</div>
+                        <div class="exam-info">
+                            <h4>THPT Đồng Đậu Phú Thọ (L1) - Hóa Học</h4>
+                            <a href="đề/hoá/Đề bài/3. THPT Đồng Đậu Phú Thọ Lần 1 [Thi thử Tốt Nghiệp THPT 2026 - Môn Hóa Học Đề.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">4</div>
+                        <div class="exam-info">
+                            <h4>THPT Cụm Bắc Ninh - Hóa Học</h4>
+                            <a href="đề/hoá/Đề bài/4. THPT Cụm Bắc Ninh - [Thi thử Tốt Nghiệp THPT 2026 - Môn Hóa Học Đề.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">5</div>
+                        <div class="exam-info">
+                            <h4>THPT Hiệp Hòa Số 1 Bắc Ninh - Hóa Học</h4>
+                            <a href="đề/hoá/Đề bài/5.TN THPT Hiệp Hòa Số 1 Bắc Ninh -[Thi thử Tốt Nghiệp THPT 2026 - Môn Hóa Học Đề.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Physics Exam Questions Section -->
+        <section id="physics-exams" class="subject-exams">
+            <div class="container">
+                <h2>Đề Bài Vật Lý - Đề Thi Thử THPT</h2>
+                <p class="section-description">Bộ sưu tập 11 đề thi thử Vật Lý từ các trường THPT hàng đầu trên cả nước. Tải về và luyện tập để chuẩn bị tốt nhất cho kỳ thi.</p>
+                <div class="exams-list">
+                    <div class="exam-item">
+                        <div class="exam-number">1</div>
+                        <div class="exam-info">
+                            <h4>Đề Cụm Bắc Ninh (L1) - Vật Lý</h4>
+                            <a href="đề/vật lý/1. Đề cụm Bắc Ninh lần 1 - [Thi thử Tốt Nghiệp THPT 2026 Môn VẬT LÝ ] Đề.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">2</div>
+                        <div class="exam-info">
+                            <h4>Đề Quế Võ 1 (L1) - Vật Lý</h4>
+                            <a href="đề/vật lý/2. Đề quế võ 1 lần 1- [Thi thử Tốt Nghiệp THPT 2026 Môn VẬT LÝ ] Đề.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">3</div>
+                        <div class="exam-info">
+                            <h4>Lê Thánh Tông - HCM - Vật Lý</h4>
+                            <a href="đề/vật lý/3. Lê Thánh Tông - HCM - [Thi thử Tốt Nghiệp THPT 2026 Môn VẬT LÝ ] Đề.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">4</div>
+                        <div class="exam-info">
+                            <h4>Nguyễn Khuyến - Lê Thánh Tông - HCM - Vật Lý</h4>
+                            <a href="đề/vật lý/4. Nguyễn Khuyến - Lê Thánh Tông - HCM - [Thi thử Tốt Nghiệp THPT 2026 Môn VẬT LÝ ] Đề.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                    <div class="exam-item">
+                        <div class="exam-number">5</div>
+                        <div class="exam-info">
+                            <h4>THPT Ngô Gia Tự - Phú Thọ - Vật Lý</h4>
+                            <a href="đề/vật lý/5. THPT Ngô Gia Tự - Phú Thọ - [Thi thử Tốt Nghiệp THPT 2026 Môn VẬT LÝ ] Đề.pdf" class="exam-download" target="_blank">📥 Tải Đề</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="news">
+            <div class="container">
+                <h2>Tin Tức &amp; Cập Nhật</h2>
+                <div class="news-grid">
+                    <article class="news-item">
+                        <div class="news-date">7 Tháng 2, 2026</div>
+                        <h3>Khóa Học Toán Nâng Cao Mở Đăng Ký</h3>
+                        <p>Khóa học toán nâng cao dành cho các học sinh muốn chuẩn bị cho kỳ thi đại học đã chính thức mở đăng ký.</p>
+                        <a href="#" class="read-more">Đọc Thêm →</a>
+                    </article>
+
+                    <article class="news-item">
+                        <div class="news-date">5 Tháng 2, 2026</div>
+                        <h3>Tuyển Tập Đề Thi Thử THPT Quốc Gia</h3>
+                        <p>Thêm 100 đề thi thử từ các trường THPT hàng đầu được thêm vào hệ thống của chúng tôi.</p>
+                        <a href="#" class="read-more">Đọc Thêm →</a>
+                    </article>
+
+                    <article class="news-item">
+                        <div class="news-date">3 Tháng 2, 2026</div>
+                        <h3>Hướng Dẫn Sử Dụng Nền Tảng Learning with 12A2</h3>
+                        <p>Hướng dẫn chi tiết cách sử dụng tất cả các tính năng của nền tảng học tập của chúng tôi.</p>
+                        <a href="#" class="read-more">Đọc Thêm →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Tài Liệu</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Bài Tập</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Video</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12A2</div>
+                    <div class="stat-label">Lớp Học</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Liên Hệ Với Chúng Tôi</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Thông Tin Liên Hệ</h3>
+                        <p><strong>Email:</strong> <a href="mailto:contact@learning12a2.com">contact@learning12a2.com</a></p>
+                        <p><strong>Điện Thoại:</strong> <a href="tel:+8490660906">+84 (0) 90660906</a></p>
+                        <p><strong>Địa Chỉ:</strong>Lớp12A2,Trường THPT Thừa Lưu, Thành Phố Huế, Việt Nam</p>
+                        <p><strong>Các Thành Viên:</strong><ul>
+                            <li class="rainbow-animate">Ngô Phước Hoàng Long - Trưởng Nhóm</li>
+                            <li>Lê Thanh Phương- Quản Lý Nội Dung</li>
+                            <li>Lê Thị Hà Phương - Quản Lý Nội Dung</li>
+                            <li>Nguyễn Nữ Anh Thư- Thiết Kế Đồ Họa</li>
+                            <li> Nguyễn Thị Thảo Vy - Quản Lý Nội Dung</li>
+                            <li>Trương Công Phúc - Quản Lý Nội Dung</li>
+                            <li>Nguyễn Trọng Thắng - Quản Lý Nội Dung</li>
+                            <li>Tôn Nữ Nguyễn Bảo Trâm - Quản Lý Nội Dung</li>
+                            <li>Trương Hiệu - Quản Lý Kỹ Thuật</li>
+                            <li>Trương Trung Dũng - Quản Lý Kỹ Thuật</li>
+                        </ul></p>
+                    
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Họ Tên:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Tài Liệu Muốn Nhận:</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tin Nhắn:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Gửi Tin Nhắn</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Về Learning with 12A2</h4>
+                    <p>Learning with 12A2 là nền tảng học tập được thiết kế đặc biệt cho các học sinh lớp 12A2 nhằm hỗ trợ quá trình học tập và chuẩn bị cho các kỳ thi quan trọng.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên Kết Nhanh</h4>
+                    <ul>
+                        <li><a href="#home">Trang Chủ</a></li>
+                        <li><a href="#courses">Khóa Học</a></li>
+                        <li><a href="#resources">Tài Nguyên</a></li>
+                        <li><a href="#contact">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Các Môn Học</h4>
+                    <ul>
+                        <li><a href="#">Toán Học</a></li>
+                        <li><a href="#">Vật Lý</a></li>
+                        <li><a href="#">Hóa Học</a></li>
+                        <li><a href="#">Tiếng Anh</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Hỗ Trợ</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Hướng Dẫn</a></li>
+                        <li><a href="#">Điều Khoản Dịch Vụ</a></li>
+                        <li><a href="#">Chính Sách Bảo Mật</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Learning with 12A2. Tất cả các quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile nav toggle
+        (function(){
+            const btn = document.querySelector('.nav-toggle');
+            const nav = document.querySelector('.main-nav');
+            if (btn && nav) {
+                btn.addEventListener('click', function() {
+                    const expanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', String(!expanded));
+                    nav.classList.toggle('open');
+                });
+            }
+        })();
+        // Countdown Timer for THPT National Exam
+        function updateCountdown() {
+            // Ngày thi THPT: 11/6/2026 - 7h00
+            const examDate = new Date(2026, 5, 11, 7, 30, 0).getTime();
+            const now = new Date().getTime();
+            const distance = examDate - now;
+
+            // Tính toán thời gian
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Cập nhật HTML countdown bar
+            const daysBar = document.getElementById('days-bar');
+            const hoursBar = document.getElementById('hours-bar');
+            const minutesBar = document.getElementById('minutes-bar');
+            const secondsBar = document.getElementById('seconds-bar');
+
+            if (daysBar) daysBar.textContent = String(days).padStart(2, '0');
+            if (hoursBar) hoursBar.textContent = String(hours).padStart(2, '0');
+            if (minutesBar) minutesBar.textContent = String(minutes).padStart(2, '0');
+            if (secondsBar) secondsBar.textContent = String(seconds).padStart(2, '0');
+
+            // Nếu kỳ thi đã qua
+            if (distance < 0) {
+                if (daysBar) daysBar.textContent = '00';
+                if (hoursBar) hoursBar.textContent = '00';
+                if (minutesBar) minutesBar.textContent = '00';
+                if (secondsBar) secondsBar.textContent = '00';
+                
+                const labelBar = document.querySelector('.countdown-label-bar');
+                if (labelBar) labelBar.textContent = 'Kỳ thi đã diễn ra!';
+            }
+        }
+
+        // Cập nhật countdown mỗi giây
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+
+        // Download handler for exam PDFs
+document.addEventListener('click', function(e) {
+    const link = e.target.closest('.exam-download');
+    if (link) {
+        e.preventDefault();
+        
+        const fileUrl = link.href;
+        const filename = fileUrl.split('/').pop() || 'download.pdf';
+        
+        console.log('Downloading:', fileUrl);
+
+        // Phương pháp 1: Tải bằng fetch (cho file từ cùng server)
+        fetch(fileUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+            return response.blob();
+        })
+        .then(blob => {
+            // Tạo link download từ blob
+            const blobUrl = URL.createObjectURL(blob);
+            const downloadLink = document.createElement('a');
+            downloadLink.href = blobUrl;
+            downloadLink.download = filename;
+            downloadLink.click();
+            
+            // Dọn dẹp
+            setTimeout(() => {
+                URL.revokeObjectURL(blobUrl);
+            }, 100);
+        })
+        .catch(err => {
+            console.warn('Fetch failed, trying direct download...', err);
+            
+            // Phương pháp 2: Tải trực tiếp thông qua href (fallback)
+            const directLink = document.createElement('a');
+            directLink.href = fileUrl;
+            directLink.download = filename;
+            directLink.click();
+        });
+    }
+});
+    </script>
+</body>
+</html>
