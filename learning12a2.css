@@ -59,10 +59,16 @@ body {
 
 .header-main .container {
     display: flex;
-    flex-direction: row;
-    gap: 30px;
+    flex-direction: column;
+    gap: 15px;
     align-items: center;
-    justify-content: space-between;
+}
+
+@media (min-width: 992px) {
+    .header-main .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .logo {
@@ -70,6 +76,7 @@ body {
     align-items: center;
     gap: 15px;
     flex-shrink: 0;
+    order: 1;
 }
 
 .logo img {
@@ -88,21 +95,58 @@ body {
     background-clip: text;
 }
 
+/* Mobile nav toggle button */
+.nav-toggle {
+    display: block;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    order: 2;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    transition: all 0.3s ease;
+}
+
+.nav-toggle:hover {
+    background-color: rgba(87, 51, 208, 0.1);
+}
+
+.nav-toggle[aria-expanded="true"] {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+@media (min-width: 992px) {
+    .nav-toggle {
+        display: none;
+    }
+}
+
 .main-nav {
-    display: flex;
-    flex: 1;
-    justify-content: center;
+    order: 4;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.main-nav.open {
+    max-height: 300px;
 }
 
 .main-nav ul {
     display: flex;
+    flex-direction: column;
     list-style: none;
-    gap: 30px;
+    gap: 10px;
+    padding: 15px 0;
 }
-.main-nav a {
-    white-space: nowrap;
-}
-
 
 .main-nav a {
     color: var(--dark-color);
@@ -113,6 +157,8 @@ body {
     font-weight: 500;
     position: relative;
     display: block;
+    text-align: center;
+    font-size: 15px;
 }
 
 .main-nav a::after {
@@ -124,15 +170,11 @@ body {
     height: 2px;
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     transform: translateX(-50%);
-    transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: width 0.3s ease;
 }
 
 .main-nav a:hover::after {
     width: 80%;
-}
-
-.main-nav {
-    flex: 0 0 auto;
 }
 
 .main-nav a:hover {
@@ -140,23 +182,91 @@ body {
     color: var(--primary-color);
 }
 
-/* Mobile nav toggle button (hidden on desktop) */
-.nav-toggle {
-    display: none;
-    background: transparent;
-    border: none;
-    font-size: 26px;
-    cursor: pointer;
-    color: var(--primary-color);
+@media (min-width: 992px) {
+    .main-nav {
+        order: 2;
+        width: auto;
+        max-height: none;
+        overflow: visible;
+    }
+    
+    .main-nav ul {
+        flex-direction: row;
+        gap: 30px;
+        padding: 0;
+    }
+    
+    .main-nav a {
+        text-align: left;
+    }
 }
 
-.main-nav.open ul {
+/* Countdown Bar */
+.countdown-bar {
+    background: linear-gradient(135deg, #5733d0 0%, #ffac48 100%);
+    padding: 12px 20px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    order: 3;
+    width: 100%;
+    margin-top: 10px;
 }
 
+@media (min-width: 768px) {
+    .countdown-bar {
+        flex-direction: row;
+        gap: 15px;
+        width: auto;
+        margin-top: 0;
+    }
+}
 
+.countdown-label-bar {
+    font-weight: 600;
+    font-size: 13px;
+    white-space: nowrap;
+    color: var(--white);
+}
+
+.countdown-timer-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+}
+
+.countdown-item-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.countdown-number-bar {
+    font-size: 20px;
+    display: block;
+    font-variant-numeric: tabular-nums;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.countdown-label-bar-small {
+    font-size: 10px;
+    opacity: 0.8;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.countdown-separator {
+    opacity: 0.6;
+    font-size: 14px;
+    color: var(--white);
+}
 
 /* Banner Section */
 .banner {
@@ -164,23 +274,42 @@ body {
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
     color: var(--white);
-    padding: 150px 20px;
+    padding: 100px 20px;
     text-align: center;
     margin-top: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+    animation: float 20s infinite ease-in-out;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
 }
 
 .banner-content h2 {
-    font-size: 56px;
+    font-size: 48px;
     margin-bottom: 20px;
-    font-weight: 800;
+    font-weight: 700;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
     animation: slideInDown 0.8s ease-out;
 }
 
 .banner-content p {
-    font-size: 22px;
-    margin-bottom: 40px;
-    opacity: 0.98;
+    font-size: 20px;
+    margin-bottom: 30px;
+    opacity: 0.95;
     animation: slideInUp 0.8s ease-out 0.1s both;
 }
 
@@ -735,8 +864,7 @@ body {
     align-items: flex-start;
     gap: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border-left: 4px solid var(--primary-color);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-left: 4px solid var(--primary-color);
     position: relative;
@@ -753,6 +881,7 @@ body {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     opacity: 0.05;
     transition: height 0.4s ease;
+    pointer-events: none;
 }
 
 .exam-item:hover::after {
@@ -783,6 +912,8 @@ body {
 
 .exam-info {
     flex: 1;
+    position: relative;
+    z-index: 2;
 }
 
 .exam-info h4 {
@@ -812,6 +943,9 @@ body {
     font-weight: 600;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: 0 3px 10px rgba(87, 51, 208, 0.2);
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
 }
 
 .exam-download:hover {
@@ -822,6 +956,11 @@ body {
 }
 
 /* News Section */
+.news {
+    padding: 80px 20px;
+    background-color: var(--light-color);
+}
+
 .news h2 {
     text-align: center;
     font-size: 38px;
@@ -924,12 +1063,12 @@ body {
     gap: 2px;
 }
 
-.countdown-number-bar {
-    font-size: 20px;
-    display: block;
-    font-variant-numeric: tabular-nums;
-    color: var(--white);
-    font-weight: 700;
+.team-list li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    color: #666;
+    line-height: 1.5;
 }
 
 .countdown-label-bar-small {
@@ -1003,9 +1142,15 @@ body {
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 40px;
     align-items: start;
+}
+
+@media (min-width: 992px) {
+    .contact-content {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .contact-info h3 {
@@ -1162,16 +1307,15 @@ body {
     .banner-content h2 {
         font-size: 32px;
     }   
-
+    
     .banner-content p {
         font-size: 16px;
     }
-
-    /* reduce banner padding on small screens */
+    
     .banner {
-        padding: 50px 20px;
+        padding: 60px 20px;
     }
-
+    
     .courses h2,
     .resources h2,
     .english-resources h2,
@@ -1181,51 +1325,41 @@ body {
     .contact h2 {
         font-size: 28px;
     }
-
+    
     .courses-grid,
     .resources-grid,
-    .english-resources-grid,
-    .news-grid,
-    .exams-list {
+    .exams-list,
+    .news-grid {
         grid-template-columns: 1fr;
     }
-
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-
+    
     .stats .container {
         grid-template-columns: 1fr 1fr;
     }
-
-    .countdown-content {
-        flex-direction: column;
-        gap: 10px;
-    }
-
+    
     .countdown-timer-bar {
-        gap: 6px;
+        gap: 4px;
     }
-
+    
     .countdown-number-bar {
         font-size: 16px;
     }
-
+    
     .countdown-label-bar-small {
-        font-size: 10px;
+        font-size: 9px;
     }
-
+    
     .exam-item {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
     }
-
+    
     .exam-number {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
     }
-
+    
     .section-description {
         font-size: 14px;
     }
@@ -1233,21 +1367,21 @@ body {
 
 @media (max-width: 480px) {
     .logo h1 {
-        font-size: 20px;
+        font-size: 22px;
     }
-
+    
     .banner-content h2 {
-        font-size: 24px;
+        font-size: 26px;
     }
-
+    
     .banner-content p {
         font-size: 14px;
     }
-
+    
     .banner {
-        padding: 30px 12px;
+        padding: 40px 15px;
     }
-
+    
     .courses h2,
     .resources h2,
     .english-resources h2,
@@ -1255,39 +1389,21 @@ body {
     .subject-exams h2,
     .news h2,
     .contact h2 {
-        font-size: 22px;
+        font-size: 24px;
     }
-
+    
     .stats .container {
         grid-template-columns: 1fr;
     }
-
-    .main-nav a {
-        padding: 6px 10px;
+    
+    .countdown-label-bar {
+        font-size: 12px;
+    }
+    
+    .countdown-number-bar {
         font-size: 14px;
     }
-
-    .main-nav ul {
-        flex-direction: row;
-        gap: 15px;
-    }
-
-    .countdown-label-bar {
-        font-size: 11px;
-    }
-
-    .countdown-timer-bar {
-        gap: 3px;
-    }
-
-    .countdown-number-bar {
-        font-size: 16px;
-    }
-
-    .countdown-separator {
-        font-size: 11px;
-    }
-
+    
     .countdown-label-bar-small {
         font-size: 8px;
     }

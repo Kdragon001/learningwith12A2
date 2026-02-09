@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test Download</title>
+</head>
+<body>
+    <h1>Test Tải Xuống File PDF</h1>
+    
+    <p>Click vào link để tải file:</p>
+    <a href="đề/đề tiếng anh/de_01.pdf" target="_blank">Tải de_01.pdf (mở tab mới)</a>
+    <br>
+    <br>
+    <button onclick="downloadFile()">Tải de_01.pdf (download handler)</button>
+    
+    <hr>
+    
+    <h2>Console Debug:</h2>
+    <p>Nhấn F12 để mở Developer Tools và xem console</p>
+    
+    <script>
+    function downloadFile() {
+        const url = "đề/đề tiếng anh/de_01.pdf";
+        console.log("Clicking download, URL:", url);
+        
+        fetch(url)
+            .then(response => {
+                console.log("Response status:", response.status);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                return response.blob();
+            })
+            .then(blob => {
+                console.log("Blob size:", blob.size, "bytes");
+                const blobUrl = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = blobUrl;
+                a.download = 'de_01.pdf';
+                a.click();
+                URL.revokeObjectURL(blobUrl);
+                console.log("Download completed!");
+            })
+            .catch(err => {
+                console.error("Error:", err);
+                alert("Lỗi: " + err);
+            });
+    }
+    </script>
+</body>
+</html>
