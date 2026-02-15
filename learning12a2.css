@@ -62,12 +62,17 @@ body {
     flex-direction: column;
     gap: 15px;
     align-items: center;
+    padding: 0 20px;
 }
 
 @media (min-width: 992px) {
     .header-main .container {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0;
+        padding: 0;
+        max-width: 100%;
     }
 }
 
@@ -77,6 +82,13 @@ body {
     gap: 15px;
     flex-shrink: 0;
     order: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.02);
 }
 
 .logo img {
@@ -188,16 +200,29 @@ body {
         width: auto;
         max-height: none;
         overflow: visible;
+        flex: 1;
+        margin: 0 30px;
+        display: flex;
+        align-items: center;
     }
     
     .main-nav ul {
         flex-direction: row;
-        gap: 30px;
+        gap: 0;
         padding: 0;
+        justify-content: space-around;
+        width: 100%;
+        align-items: center;
+    }
+    
+    .main-nav li {
+        flex: 1;
     }
     
     .main-nav a {
-        text-align: left;
+        text-align: center;
+        padding: 10px 8px;
+        display: block;
     }
 }
 
@@ -223,6 +248,15 @@ body {
         gap: 15px;
         width: auto;
         margin-top: 0;
+        flex-shrink: 0;
+        order: 3;
+    }
+}
+
+@media (min-width: 992px) {
+    .countdown-bar {
+        order: 3;
+        margin-left: auto;
     }
 }
 
